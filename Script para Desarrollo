@@ -1,0 +1,36 @@
+# Levantar una máquina virtual
+vagrant up
+
+# Conectarse a la máquina virtual
+vagrant ssh
+
+# En la máquina virtual cambiar a directorio de vagrant
+vagrant@ubuntu-bionic:~$ cd /vagrant/
+
+# Activar el ambiente virtual
+vagrant@ubuntu-bionic:/vagrant$ source ~/env/bin/activate
+
+# Abrir un proyecto nuevo <profiles_project> en el directorio actual (con el "punto" ".")
+(env) vagrant@ubuntu-bionic:/vagrant$ django-admin.py startproject profiles_project .
+
+# Crear una aplicación nueva <profiles_api> usando django con manage.py
+(env) vagrant@ubuntu-bionic:/vagrant$ python manage.py startapp profiles_api
+
+# Permitir una aplicación nueva en el proyecto profiles_project abrir el documento settings.py
+# Es necesario permitir el rest_framework y rest_framework.authtoken si se van a usar.
+# Aquí se autoriza el programa profile_api
+## settings.py
+INSTALLED_APPS = [
+    ...,
+    'rest_framework',
+    'rest_framework.authtoken',
+    'profiles_api',
+]
+# Django viene con un servidor de desarrollo para hacer pruebas
+# Se accede de ésta manera
+(env) vagrant@ubuntu-bionic:/vagrant$ python manage.py runserver 0.0.0.0:8000
+
+# La máquina virtual fué configurada para que el uso del puerto 8000
+
+
+Create a Project and API
