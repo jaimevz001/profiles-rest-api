@@ -1,3 +1,31 @@
+# Instalar <github>
+# git version 2.16.2
+# configurar para poder hacer los commits a github
+# Descargar e instalar <VirtualBox>
+# Descargar e instalar <Vagrant>
+# Vagrant 2.2.18
+# Instalar Atom
+# Instalar ModHeader que es un add-in para Chrome
+
+# Usar el espacio de trabajo (workspace o Courses en mi caso) en la PC
+# Crear un directorio para el **proyecto** sin caracteres especiales ni espacios
+# Adicionar el fólder del **proyecto** anterior <Add Project Folder> en Atom
+# Crear el **proyecto** en Git
+git init
+# Reiniciar Atom para que adquiera el ícono de proyecto en Git
+# Crear un README.md
+# Generar un programa para ignorar parte del código de instalación .gitignore
+# Hacer un archivo para la licencia LICENSE
+
+## Se necesita crear una llave para sincronzir con github
+ls ~/.ssh
+ssh-keygen -t rsa -b 4096 -C "jaimevz@mac.com"
+## Es recomendable crear una frase
+## Genera la llave pública y privada
+
+## Entrar al perfil de GitHub y adicionar la llave
+## Ahora hay que generar un Token, poner el password y usarlo 
+
 # Levantar una máquina virtual
 vagrant up
 
