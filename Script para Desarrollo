@@ -24,7 +24,7 @@ ssh-keygen -t rsa -b 4096 -C "jaimevz@mac.com"
 ## Genera la llave pública y privada
 
 ## Entrar al perfil de GitHub y adicionar la llave
-## Ahora hay que generar un Token, poner el password y usarlo 
+## Ahora hay que generar un Token, poner el password y usarlo
 
 # Levantar una máquina virtual
 vagrant up
@@ -35,8 +35,14 @@ vagrant ssh
 # En la máquina virtual cambiar a directorio de vagrant
 vagrant@ubuntu-bionic:~$ cd /vagrant/
 
-# Activar el ambiente virtual
+# Activar el ambiente virtual de pyhton poniendo la ruta donde se va a instalar
+vagrant@ubuntu-bionic:/vagrant$ python -m venv ~/env
+# Hay que activar el ambiente virtual con el _Comando activate_
 vagrant@ubuntu-bionic:/vagrant$ source ~/env/bin/activate
+
+# Hay que instalar los paquetes requeridos de la lista en el _Archivo requirements.txt_
+# Si ya estaba instalado sólo dirá que los requerimientos han sido satisfechos
+vagrant@ubuntu-bionic:/vagrant$ pip install -r requirements.txt
 
 # Abrir un proyecto nuevo <profiles_project> en el directorio actual (con el "punto" ".")
 (env) vagrant@ubuntu-bionic:/vagrant$ django-admin.py startproject profiles_project .
